@@ -1,0 +1,58 @@
+{
+  "todo": [
+    {
+      "id": 1,
+      "title": "Get To Work",
+      "content": "Get To Work at 8AM",
+      "status": 1
+    },
+    {
+      "id": 2,
+      "title": "Pick up groceries",
+      "content": "Grocery List : Carrot , tomatoes , milk , bread , sugar",
+      "status": 1
+    },
+    {
+      "id": 3,
+      "title": "Go home",
+      "content": "Go home by 6 PM",
+      "status": 1
+    },
+    {
+      "id": 4,
+      "title": "Fall asleep",
+      "content": "Fall asleep at 9 PM",
+      "status": 1
+    },
+    {
+      "id": 5,
+      "title": "Get up",
+      "content": "Get up at 7 AM for work",
+      "status": 2
+    },
+    {
+      "id": 6,
+      "title": "Brush teeth",
+      "content": "Brush teeth",
+      "status": 2
+    },
+    {
+      "id": 7,
+      "title": "Take a shower",
+      "content": "Take a shower with hot water",
+      "status": 3
+    },
+    {
+      "id": 8,
+      "title": "Check e-mail",
+      "content": "Check personal e-mail at 8 AM",
+      "status": 3
+    },
+    {
+      "id": 9,
+      "title": "Walk dog",
+      "content": "Walk dog at 8.30 AM - get home by 9 AM",
+      "status": 3
+    }
+  ]
+}
