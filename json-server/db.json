@@ -22,13 +22,13 @@
       "id": 4,
       "title": "Fall asleep",
       "content": "Fall asleep at 9 PM",
-      "status": 1
+      "status": 2
     },
     {
       "id": 5,
       "title": "Get up",
       "content": "Get up at 7 AM for work",
-      "status": 2
+      "status": 1
     },
     {
       "id": 6,
