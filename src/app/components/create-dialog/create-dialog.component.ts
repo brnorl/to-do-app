@@ -34,6 +34,7 @@ export class CreateDialogComponent implements OnInit {
       title: [null, [Validators.required]],
       content: [null],
       status: [1],
+      dueDate : [null]
     });
   }
 }

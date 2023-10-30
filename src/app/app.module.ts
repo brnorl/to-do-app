@@ -20,6 +20,8 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import {MatInputModule} from '@angular/material/input';
 import {MatCardModule} from '@angular/material/card';
 import { UpdateDialogComponent } from './components/update-dialog/update-dialog.component';
+import { MatNativeDateModule } from '@angular/material/core';
+import {MatDatepickerModule} from '@angular/material/datepicker';
 
 @NgModule({
   declarations: [
@@ -47,7 +49,9 @@ import { UpdateDialogComponent } from './components/update-dialog/update-dialog.
     CdkDropList,
     MatDialogModule,
     MatButtonModule,
-    MatDividerModule
+    MatDividerModule,
+    MatDatepickerModule,
+    MatNativeDateModule
   ],
   providers: [ModalService, ToDoService],
   bootstrap: [AppComponent],

@@ -5,4 +5,5 @@ export interface TodoItem {
   title: string;
   content: string;
   status: StatusEnum;
+  dueDate : Date;
 }

@@ -1,5 +1,5 @@
 import { Component, Inject, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { ModalData } from 'src/app/interfaces/modalData';
 import { ModalService } from 'src/app/services/modal.service';
@@ -22,6 +22,7 @@ export class UpdateDialogComponent implements OnInit {
   ) {}
 
   ngOnInit() {
+    console.log('this.data: ', this.data);
     this.updateFormInit();
   }
 
@@ -37,7 +38,8 @@ export class UpdateDialogComponent implements OnInit {
       title: [this.data.title, [Validators.required]],
       content: [this.data.content],
       status: [this.data.status],
-      id:[this.data.id]
+      id:[this.data.id],
+      dueDate : new FormControl(new Date(this.data.dueDate)) 
     });
   }
 }

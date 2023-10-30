@@ -58,6 +58,7 @@ export class ListsComponent implements OnInit {
   }
   
   openUpdateDialog(item: TodoItem) {
+    console.log('openUpdateDialog item: ', item);
     this.dialogRef = this.modalService.openUpdateDialog(item);
     
     this.dialogRef.afterClosed().subscribe(() => this.loadItems());

@@ -24,7 +24,8 @@ export class ModalService {
         title: item.title,
         content: item.content,
         id: item.id,
-        status : item.status
+        status : item.status,
+        dueDate : item.dueDate
       }),
     });
 
@@ -52,7 +53,8 @@ export class ModalService {
         title: item.title,
         content: item.content,
         id: item.id,
-        status : item.status
+        status : item.status,
+        dueDate : item.dueDate
       }),
     });
 

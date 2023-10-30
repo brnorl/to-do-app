@@ -13,14 +13,8 @@ export class DetailDialogComponent implements OnInit {
   constructor(
     @Inject(MAT_DIALOG_DATA)
     public data: ModalData,
-    private todoService: ToDoService,
-    private modalService: ModalService
   ) {}
 
   ngOnInit() {}
 
-  updateItem() {
-    this.modalService.close();
-    this.modalService.openUpdateDialog(this.data);
-  }
 }

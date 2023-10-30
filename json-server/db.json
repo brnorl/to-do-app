@@ -4,55 +4,64 @@
       "id": 1,
       "title": "Get To Work",
       "content": "Get To Work at 8AM",
-      "status": 1
+      "status": 2,
+      "dueDate": "2023-10-16T21:00:00.000Z"
     },
     {
-      "id": 2,
       "title": "Pick up groceries",
       "content": "Grocery List : Carrot , tomatoes , milk , bread , sugar",
-      "status": 1
+      "status": 1,
+      "id": 2,
+      "dueDate": "2023-10-02T21:00:00.000Z"
     },
     {
       "id": 3,
       "title": "Go home",
       "content": "Go home by 6 PM",
-      "status": 1
+      "status": 2,
+      "dueDate": "2023-10-16T21:00:00.000Z"
     },
     {
       "id": 4,
       "title": "Fall asleep",
       "content": "Fall asleep at 9 PM",
-      "status": 2
+      "status": 1,
+      "dueDate": "2023-10-16T21:00:00.000Z"
     },
     {
       "id": 5,
       "title": "Get up",
       "content": "Get up at 7 AM for work",
-      "status": 1
+      "status": 1,
+      "dueDate": "2023-10-16T21:00:00.000Z"
     },
     {
       "id": 6,
       "title": "Brush teeth",
       "content": "Brush teeth",
-      "status": 2
+      "status": 2,
+      "dueDate": "2023-10-16T21:00:00.000Z"
     },
     {
       "id": 7,
       "title": "Take a shower",
       "content": "Take a shower with hot water",
-      "status": 3
+      "status": 3,
+      "dueDate": "2023-10-16T21:00:00.000Z"
     },
     {
       "id": 8,
       "title": "Check e-mail",
       "content": "Check personal e-mail at 8 AM",
-      "status": 3
+      "status": 3,
+      "dueDate": "2023-10-16T21:00:00.000Z"
     },
     {
       "id": 9,
       "title": "Walk dog",
       "content": "Walk dog at 8.30 AM - get home by 9 AM",
-      "status": 3
+      "status": 3,
+      "dueDate": "2023-10-16T21:00:00.000Z"
     }
   ]
 }
