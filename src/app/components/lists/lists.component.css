@@ -8,6 +8,9 @@
   .grid-container {
     display: block;
   }
+  .item-container{
+    width: 100%!important;
+  }
 }
 
 .item-container {
