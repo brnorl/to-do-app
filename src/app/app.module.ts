@@ -23,11 +23,13 @@ import { UpdateDialogComponent } from './components/update-dialog/update-dialog.
 import { MatNativeDateModule } from '@angular/material/core';
 import {MatDatepickerModule} from '@angular/material/datepicker';
 import { NgxChartsModule } from "@swimlane/ngx-charts";
+import { FooterComponent } from './components/footer/footer.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     NavComponent,
+    FooterComponent,
     ListsComponent,
     DetailDialogComponent,
     CreateDialogComponent,
