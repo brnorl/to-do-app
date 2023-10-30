@@ -22,6 +22,7 @@ import {MatCardModule} from '@angular/material/card';
 import { UpdateDialogComponent } from './components/update-dialog/update-dialog.component';
 import { MatNativeDateModule } from '@angular/material/core';
 import {MatDatepickerModule} from '@angular/material/datepicker';
+import { NgxChartsModule } from "@swimlane/ngx-charts";
 
 @NgModule({
   declarations: [
@@ -51,7 +52,8 @@ import {MatDatepickerModule} from '@angular/material/datepicker';
     MatButtonModule,
     MatDividerModule,
     MatDatepickerModule,
-    MatNativeDateModule
+    MatNativeDateModule,
+    NgxChartsModule
   ],
   providers: [ModalService, ToDoService],
   bootstrap: [AppComponent],

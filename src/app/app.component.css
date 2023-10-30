@@ -1,0 +1,10 @@
+::ng-deep .mat-toolbar.mat-primary {
+    --mat-toolbar-container-background-color: #6977C5!important;
+    --mat-toolbar-container-text-color: white;
+}
+
+::ng-deep .mat-mdc-icon-button.mat-primary {
+    --mdc-icon-button-icon-color: #6977C5;
+    --mat-mdc-button-persistent-ripple-color: #6977C5;
+    --mat-mdc-button-ripple-color: rgba(63, 81, 181, 0.1);
+}
