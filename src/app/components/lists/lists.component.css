@@ -75,7 +75,3 @@
 .item-button {
   margin: 0 0.3rem;
 }
-
-::ng-deep .mat-mdc-raised-button > .mat-icon {
-  margin: 0 !important;
-}

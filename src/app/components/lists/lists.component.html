@@ -3,20 +3,24 @@
     <h2>To do</h2>
 
     <div cdkDropList #todoList="cdkDropList" [cdkDropListData]="todo" [cdkDropListConnectedTo]="[progressList, todoList]" class="item-list" (cdkDropListDropped)="drop($event, 1)">
-      <div class="item-box" *ngFor="let item of todo" cdkDrag>
-        {{ item.title }}
-        <div class="item-buttons">
-          <button class="item-button" (click)="openDetailsDialog(item)" mat-raised-button color="primary">
-            <mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="remove_red_eye"></mat-icon>
-          </button>
-          <button class="item-button" (click)="openUpdateDialog(item)" mat-raised-button color="secondary">
-            <mat-icon aria-hidden="false" fontIcon="edit"></mat-icon>
-          </button>
-          <button class="item-button" (click)="deleteItem(item)" mat-raised-button color="warn">
-            <mat-icon aria-hidden="false" fontIcon="delete"></mat-icon>
-          </button>
-        </div>
-      </div>
+      <mat-card>
+        <mat-card-content>
+          <div class="item-box" *ngFor="let item of todo" cdkDrag>
+            {{ item.title }}
+            <div class="item-buttons">
+              <button class="item-button" (click)="openDetailsDialog(item)" mat-icon-button color="primary">
+                <mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="remove_red_eye"></mat-icon>
+              </button>
+              <button class="item-button" (click)="openUpdateDialog(item)" mat-icon-button color="secondary">
+                <mat-icon aria-hidden="false" fontIcon="edit"></mat-icon>
+              </button>
+              <button class="item-button" (click)="deleteItem(item)" mat-icon-button color="warn">
+                <mat-icon aria-hidden="false" fontIcon="delete"></mat-icon>
+              </button>
+            </div>
+          </div>
+        </mat-card-content>
+      </mat-card>
     </div>
   </div>
 
@@ -24,20 +28,24 @@
     <h2>In Progress</h2>
 
     <div cdkDropList #progressList="cdkDropList" [cdkDropListData]="progress" [cdkDropListConnectedTo]="[doneList, progressList, todoList]" class="item-list" (cdkDropListDropped)="drop($event, 2)">
-      <div class="item-box" *ngFor="let item of progress" cdkDrag>
-        {{ item.title }}
-        <div class="item-buttons">
-          <button class="item-button" (click)="openDetailsDialog(item)" mat-raised-button color="primary">
-            <mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="remove_red_eye"></mat-icon>
-          </button>
-          <button class="item-button" (click)="openUpdateDialog(item)" mat-raised-button color="secondary">
-            <mat-icon aria-hidden="false" fontIcon="edit"></mat-icon>
-          </button>
-          <button class="item-button" (click)="deleteItem(item)" mat-raised-button color="warn">
-            <mat-icon aria-hidden="false" fontIcon="delete"></mat-icon>
-          </button>
-        </div>
-      </div>
+      <mat-card>
+        <mat-card-content>
+          <div class="item-box" *ngFor="let item of progress" cdkDrag>
+            {{ item.title }}
+            <div class="item-buttons">
+              <button class="item-button" (click)="openDetailsDialog(item)" mat-icon-button color="primary">
+                <mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="remove_red_eye"></mat-icon>
+              </button>
+              <button class="item-button" (click)="openUpdateDialog(item)" mat-icon-button color="secondary">
+                <mat-icon aria-hidden="false" fontIcon="edit"></mat-icon>
+              </button>
+              <button class="item-button" (click)="deleteItem(item)" mat-icon-button color="warn">
+                <mat-icon aria-hidden="false" fontIcon="delete"></mat-icon>
+              </button>
+            </div>
+          </div>
+        </mat-card-content>
+      </mat-card>
     </div>
   </div>
 
@@ -45,20 +53,24 @@
     <h2>Done</h2>
 
     <div cdkDropList #doneList="cdkDropList" [cdkDropListData]="done" [cdkDropListConnectedTo]="[todoList, progressList]" class="item-list" (cdkDropListDropped)="drop($event, 3)">
-      <div class="item-box" *ngFor="let item of done" cdkDrag>
-        {{ item.title }}
-        <div class="item-buttons">
-          <button class="item-button" (click)="openDetailsDialog(item)" mat-raised-button color="primary">
-            <mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="remove_red_eye"></mat-icon>
-          </button>
-          <button class="item-button" (click)="openUpdateDialog(item)" mat-raised-button color="secondary">
-            <mat-icon aria-hidden="false" fontIcon="edit"></mat-icon>
-          </button>
-          <button class="item-button" (click)="deleteItem(item)" mat-raised-button color="warn">
-            <mat-icon aria-hidden="false" fontIcon="delete"></mat-icon>
-          </button>
-        </div>
-      </div>
+      <mat-card>
+        <mat-card-content>
+          <div class="item-box" *ngFor="let item of done" cdkDrag>
+            {{ item.title }}
+            <div class="item-buttons">
+              <button class="item-button" (click)="openDetailsDialog(item)" mat-icon-button color="primary">
+                <mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="remove_red_eye"></mat-icon>
+              </button>
+              <button class="item-button" (click)="openUpdateDialog(item)" mat-icon-button color="secondary">
+                <mat-icon aria-hidden="false" fontIcon="edit"></mat-icon>
+              </button>
+              <button class="item-button" (click)="deleteItem(item)" mat-icon-button color="warn">
+                <mat-icon aria-hidden="false" fontIcon="delete"></mat-icon>
+              </button>
+            </div>
+          </div>
+        </mat-card-content>
+      </mat-card>
     </div>
   </div>
 </div>
