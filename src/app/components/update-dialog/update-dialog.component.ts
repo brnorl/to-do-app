@@ -1,9 +1,17 @@
 import { Component, Inject, OnInit } from '@angular/core';
-import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
+import {
+  FormBuilder,
+  FormControl,
+  FormGroup,
+  Validators,
+} from '@angular/forms';
 import { MAT_DIALOG_DATA } from '@angular/material/dialog';
+import { Store } from '@ngrx/store';
 import { ModalData } from 'src/app/interfaces/modalData';
 import { ModalService } from 'src/app/services/modal.service';
 import { ToDoService } from 'src/app/services/to-do.service';
+import { updateItem } from 'src/app/store/app.actions';
+import { State } from 'src/app/store/app.reducer';
 
 @Component({
   selector: 'app-update-dialog',
@@ -18,28 +26,27 @@ export class UpdateDialogComponent implements OnInit {
     public data: ModalData,
     private todoService: ToDoService,
     private modalService: ModalService,
-    private fb: FormBuilder
+    private fb: FormBuilder,
+    private store: Store<State>
   ) {}
 
   ngOnInit() {
-    console.log('this.data: ', this.data);
     this.updateFormInit();
   }
 
   updateItem() {
     const value = this.updateForm.getRawValue();
-    this.todoService.updateItem(value).subscribe((res) => {
-      this.modalService.close();
-    });
+    this.store.dispatch(updateItem({ item: value }));
+    this.modalService.close();
   }
 
-  updateFormInit(){
+  updateFormInit() {
     this.updateForm = this.fb.group({
       title: [this.data.title, [Validators.required]],
       content: [this.data.content],
       status: [this.data.status],
-      id:[this.data.id],
-      dueDate : new FormControl(new Date(this.data.dueDate)) 
+      id: [this.data.id],
+      dueDate: new FormControl(new Date(this.data.dueDate)),
     });
   }
 }

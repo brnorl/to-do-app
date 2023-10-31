@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { NgModule, isDevMode } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
@@ -24,6 +24,10 @@ import { MatNativeDateModule } from '@angular/material/core';
 import {MatDatepickerModule} from '@angular/material/datepicker';
 import { NgxChartsModule } from "@swimlane/ngx-charts";
 import { FooterComponent } from './components/footer/footer.component';
+import { StoreModule } from '@ngrx/store';
+import { StoreDevtoolsModule } from '@ngrx/store-devtools';
+import { EffectsModule } from '@ngrx/effects';
+import * as fromApp from './store/app.reducer';
 
 @NgModule({
   declarations: [
@@ -55,7 +59,11 @@ import { FooterComponent } from './components/footer/footer.component';
     MatDividerModule,
     MatDatepickerModule,
     MatNativeDateModule,
-    NgxChartsModule
+    NgxChartsModule,
+    StoreModule.forRoot({}, {}),
+    StoreDevtoolsModule.instrument({ maxAge: 25, logOnly: !isDevMode() }),
+    EffectsModule.forRoot([]),
+    StoreModule.forFeature(fromApp.appFeatureKey, fromApp.itemReducer),
   ],
   providers: [ModalService, ToDoService],
   bootstrap: [AppComponent],

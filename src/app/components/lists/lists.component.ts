@@ -5,11 +5,16 @@ import {
 } from '@angular/cdk/drag-drop';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
+import { Store, select } from '@ngrx/store';
 import { SearchParams } from 'src/app/interfaces/searchParams';
 import { StatusEnum } from 'src/app/interfaces/status.enum';
 import { TodoItem } from 'src/app/interfaces/todoItem';
 import { ModalService } from 'src/app/services/modal.service';
 import { ToDoService } from 'src/app/services/to-do.service';
+import { State } from '../../store/app.reducer';
+import { Observable } from 'rxjs';
+import { selectItems } from 'src/app/store/app.selectors';
+import { deleteItem } from 'src/app/store/app.actions';
 
 @Component({
   selector: 'app-lists',
@@ -27,11 +32,13 @@ export class ListsComponent implements OnInit {
   labelsPC = true;
   doughnut = true;
   searchForm: FormGroup;
+  itemList$: Observable<TodoItem[]>;
 
   constructor(
     public modalService: ModalService,
     private todoService: ToDoService,
-    private fb: FormBuilder
+    private fb: FormBuilder,
+    private store: Store<State>
   ) {}
 
   ngOnInit() {
@@ -39,8 +46,8 @@ export class ListsComponent implements OnInit {
     this.searchFormInit();
   }
 
-  async loadItems() {
-    await this.todoService.getTodoItems().subscribe((res) => {
+  loadItems() {
+    this.store.pipe(select(selectItems)).subscribe((res) => {
       this.todo = [];
       this.progress = [];
       this.done = [];
@@ -74,9 +81,8 @@ export class ListsComponent implements OnInit {
   }
 
   deleteItem(item: TodoItem) {
-    this.todoService.deleteTodoItem(item.id).subscribe((res) => {
-      this.loadItems();
-    });
+    this.store.dispatch(deleteItem({ id: item.id }));
+    this.loadItems();
   }
 
   drop(event: any, status: StatusEnum) {
@@ -101,7 +107,7 @@ export class ListsComponent implements OnInit {
     }
   }
 
-  loadChartData(totalData:number) {
+  loadChartData(totalData: number) {
     this.data = [
       {
         name: 'To Do',
@@ -132,26 +138,37 @@ export class ListsComponent implements OnInit {
       this.searchItem(res);
     });
   }
-  searchItem(searchParams : SearchParams) {
-    this.todo = this.todo?.filter(x =>  
-      x.title.toLowerCase().includes(searchParams.title?.toLowerCase())||
-      x?.content.toLowerCase().includes(searchParams.content?.toLowerCase()) ||
-      x?.dueDate.toString() == searchParams?.dueDate?.toISOString()
-      );
-    this.progress = this.progress?.filter(x =>  
-      x.title.toLowerCase().includes(searchParams.title?.toLowerCase())||
-      x?.content.toLowerCase().includes(searchParams.content?.toLowerCase()) ||
-      x?.dueDate.toString() == searchParams?.dueDate?.toISOString()
-      );
-    this.done = this.done?.filter(x =>  
-      x.title.toLowerCase().includes(searchParams.title?.toLowerCase())||
-      x?.content.toLowerCase().includes(searchParams.content?.toLowerCase()) ||
-      x?.dueDate.toString() == searchParams?.dueDate?.toISOString()
-      );
-      this.loadChartData(this.todo.length + this.progress.length + this.done.length);
+  searchItem(searchParams: SearchParams) {
+    this.todo = this.todo?.filter(
+      (x) =>
+        x.title.toLowerCase().includes(searchParams.title?.toLowerCase()) ||
+        x?.content
+          .toLowerCase()
+          .includes(searchParams.content?.toLowerCase()) ||
+        x?.dueDate.toString() == searchParams?.dueDate?.toISOString()
+    );
+    this.progress = this.progress?.filter(
+      (x) =>
+        x.title.toLowerCase().includes(searchParams.title?.toLowerCase()) ||
+        x?.content
+          .toLowerCase()
+          .includes(searchParams.content?.toLowerCase()) ||
+        x?.dueDate.toString() == searchParams?.dueDate?.toISOString()
+    );
+    this.done = this.done?.filter(
+      (x) =>
+        x.title.toLowerCase().includes(searchParams.title?.toLowerCase()) ||
+        x?.content
+          .toLowerCase()
+          .includes(searchParams.content?.toLowerCase()) ||
+        x?.dueDate.toString() == searchParams?.dueDate?.toISOString()
+    );
+    this.loadChartData(
+      this.todo.length + this.progress.length + this.done.length
+    );
   }
 
-  clearForm(){
+  clearForm() {
     this.searchForm.reset();
     this.loadItems();
   }

@@ -1,6 +1,6 @@
 import { StatusEnum } from './status.enum';
 
-export interface TodoItem {
+export class TodoItem {
   id: number;
   title: string;
   content: string;

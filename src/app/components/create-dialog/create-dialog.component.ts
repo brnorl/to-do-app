@@ -1,8 +1,11 @@
 import { Component, Inject, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { MAT_DIALOG_DATA } from '@angular/material/dialog';
+import { Store } from '@ngrx/store';
 import { ModalService } from 'src/app/services/modal.service';
 import { ToDoService } from 'src/app/services/to-do.service';
+import { addItem } from 'src/app/store/app.actions';
+import { State } from 'src/app/store/app.reducer';
 
 @Component({
   selector: 'app-create-dialog',
@@ -13,9 +16,9 @@ export class CreateDialogComponent implements OnInit {
   createForm: FormGroup;
 
   constructor(
-    private todoService: ToDoService,
     private modalService: ModalService,
-    private fb: FormBuilder
+    private fb: FormBuilder,
+    private store: Store<State>
   ) {}
 
   ngOnInit() {
@@ -23,18 +26,16 @@ export class CreateDialogComponent implements OnInit {
   }
 
   createItem() {
-    const value = this.createForm.getRawValue();
-    this.todoService.addNewItem(value).subscribe((res) => {
-      this.modalService.close();
-    });
+    this.store.dispatch(addItem({ item: this.createForm.value }));
+    this.modalService.close();
   }
 
-  createFormInit(){
+  createFormInit() {
     this.createForm = this.fb.group({
       title: [null, [Validators.required]],
       content: [null],
       status: [1],
-      dueDate : [null]
+      dueDate: [null],
     });
   }
 }
