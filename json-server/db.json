@@ -18,14 +18,14 @@
       "id": 3,
       "title": "Go home",
       "content": "Go home by 6 PM",
-      "status": 3,
+      "status": 1,
       "dueDate": "2023-10-16T21:00:00.000Z"
     },
     {
       "id": 4,
       "title": "Fall asleep",
       "content": "Fall asleep at 9 PM",
-      "status": 2,
+      "status": 3,
       "dueDate": "2023-10-16T21:00:00.000Z"
     },
     {
@@ -53,7 +53,7 @@
       "id": 8,
       "title": "Check e-mail",
       "content": "Check personal e-mail at 8 AM",
-      "status": 3,
+      "status": 2,
       "dueDate": "2023-10-16T21:00:00.000Z"
     },
     {
@@ -80,14 +80,14 @@
     {
       "title": "test3",
       "content": "test3",
-      "status": 2,
+      "status": 3,
       "dueDate": "2023-10-13T21:00:00.000Z",
       "id": 12
     },
     {
       "title": "test5",
       "content": "test5",
-      "status": 2,
+      "status": 3,
       "dueDate": "2023-10-21T21:00:00.000Z",
       "id": 13
     },
@@ -129,7 +129,7 @@
     {
       "title": "baran",
       "content": "baran",
-      "status": 2,
+      "status": 3,
       "dueDate": "2023-10-16T21:00:00.000Z",
       "id": 19
     }

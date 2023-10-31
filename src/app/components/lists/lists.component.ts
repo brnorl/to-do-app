@@ -22,7 +22,6 @@ export class ListsComponent implements OnInit {
   done: Array<TodoItem> = [];
   dialogRef: any;
   data: Array<Object> = [];
-  viewPC: [number, number] = [500, 400];
   animationPC = true;
   colorSchemePC = 'vivid';
   labelsPC = true;

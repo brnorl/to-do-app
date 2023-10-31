@@ -5,6 +5,11 @@
   margin-top: 1rem;
 }
 
+@media (min-width: 1060px) {
+  .item-container{
+    margin: 0 1rem 1rem 0;
+  }
+}
 @media (max-width: 1499px) {
   .grid-container {
     display: block;
@@ -18,7 +23,6 @@
   grid-row: 4;
   width: 29rem;
   max-width: 100%;
-  margin: 0 25px 25px 0;
   display: inline-block;
   text-align: center;
 }

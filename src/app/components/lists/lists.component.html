@@ -6,7 +6,7 @@
           <button class="position-left form-field button" (click)="openCreateDialog()" mat-raised-button
             color="primary">
             <mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="add"></mat-icon>
-            Add New Item
+            Add
           </button>
         </div>
         <div class="right">
@@ -113,8 +113,8 @@
   </div>
 </div>
 <div class="grid-container">
-  <div class="item-container">
-    <ngx-charts-pie-chart [results]="data" [view]="viewPC" [animations]="animationPC" [scheme]="colorSchemePC"
+  <div class="item-container" style="min-height: 20rem;">
+    <ngx-charts-pie-chart [results]="data" [animations]="animationPC" [scheme]="colorSchemePC"
       [labels]="labelsPC" [doughnut]="doughnut" [tooltipText]="percentageFormatter"
       [gradient]="true"></ngx-charts-pie-chart>
   </div>
