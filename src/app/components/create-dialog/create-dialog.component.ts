@@ -1,9 +1,7 @@
 import { Component, Inject, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { Store } from '@ngrx/store';
 import { ModalService } from 'src/app/services/modal.service';
-import { ToDoService } from 'src/app/services/to-do.service';
 import { addItem } from 'src/app/store/app.actions';
 import { State } from 'src/app/store/app.reducer';
 

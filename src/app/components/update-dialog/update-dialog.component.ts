@@ -9,7 +9,6 @@ import { MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { Store } from '@ngrx/store';
 import { ModalData } from 'src/app/interfaces/modalData';
 import { ModalService } from 'src/app/services/modal.service';
-import { ToDoService } from 'src/app/services/to-do.service';
 import { updateItem } from 'src/app/store/app.actions';
 import { State } from 'src/app/store/app.reducer';
 
@@ -24,7 +23,6 @@ export class UpdateDialogComponent implements OnInit {
   constructor(
     @Inject(MAT_DIALOG_DATA)
     public data: ModalData,
-    private todoService: ToDoService,
     private modalService: ModalService,
     private fb: FormBuilder,
     private store: Store<State>

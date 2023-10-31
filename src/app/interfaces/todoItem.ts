@@ -6,4 +6,20 @@ export class TodoItem {
   content: string;
   status: StatusEnum;
   dueDate : Date;
+  /**
+   *
+   */
+  constructor(
+    id:number,
+    title:string,
+    content:string,
+    status:StatusEnum,
+    dueDate:Date
+  ) {
+    id = this.id;
+    title = this.title;
+    content = this.content;
+    status = this.status;
+    dueDate = this.dueDate;
+  }
 }

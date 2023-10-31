@@ -1,5 +1,4 @@
 import {
-  CdkDragDrop,
   moveItemInArray,
   transferArrayItem,
 } from '@angular/cdk/drag-drop';
@@ -10,11 +9,10 @@ import { SearchParams } from 'src/app/interfaces/searchParams';
 import { StatusEnum } from 'src/app/interfaces/status.enum';
 import { TodoItem } from 'src/app/interfaces/todoItem';
 import { ModalService } from 'src/app/services/modal.service';
-import { ToDoService } from 'src/app/services/to-do.service';
 import { State } from '../../store/app.reducer';
 import { Observable } from 'rxjs';
 import { selectItems } from 'src/app/store/app.selectors';
-import { deleteItem } from 'src/app/store/app.actions';
+import { deleteItem, updateItem } from 'src/app/store/app.actions';
 
 @Component({
   selector: 'app-lists',
@@ -36,7 +34,6 @@ export class ListsComponent implements OnInit {
 
   constructor(
     public modalService: ModalService,
-    private todoService: ToDoService,
     private fb: FormBuilder,
     private store: Store<State>
   ) {}
@@ -100,10 +97,15 @@ export class ListsComponent implements OnInit {
         event.previousIndex,
         event.currentIndex
       );
-      movedItem.status = status;
-      this.todoService.updateItem(movedItem).subscribe((res) => {
-        this.loadItems();
-      });
+
+      //because of you cannot modify an object that is stored in the state
+      this.store.dispatch(updateItem({ item:{
+        id:movedItem.id,
+        status:status,
+        dueDate : movedItem.dueDate,
+        content : movedItem.content,
+        title: movedItem.title
+      } }));
     }
   }
 
