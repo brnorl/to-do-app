@@ -1,7 +1,4 @@
-import {
-  moveItemInArray,
-  transferArrayItem,
-} from '@angular/cdk/drag-drop';
+import { moveItemInArray, transferArrayItem } from '@angular/cdk/drag-drop';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { Store, select } from '@ngrx/store';
@@ -99,13 +96,17 @@ export class ListsComponent implements OnInit {
       );
 
       //because of you cannot modify an object that is stored in the state
-      this.store.dispatch(updateItem({ item:{
-        id:movedItem.id,
-        status:status,
-        dueDate : movedItem.dueDate,
-        content : movedItem.content,
-        title: movedItem.title
-      } }));
+      this.store.dispatch(
+        updateItem({
+          item: {
+            id: movedItem.id,
+            status: status,
+            dueDate: movedItem.dueDate,
+            content: movedItem.content,
+            title: movedItem.title,
+          },
+        })
+      );
     }
   }
 
@@ -173,5 +174,10 @@ export class ListsComponent implements OnInit {
   clearForm() {
     this.searchForm.reset();
     this.loadItems();
+  }
+
+  calculateRemainingDay(item: TodoItem) {
+    let remainingDays = item.dueDate.getDate() - new Date().getDate();
+    return remainingDays;
   }
 }
