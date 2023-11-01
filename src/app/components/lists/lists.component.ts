@@ -142,15 +142,13 @@ export class ListsComponent implements OnInit {
     });
   }
   searchItem(searchParams: SearchParams) {
-    console.log('searchParams?.dueDate?.getDate(): ', searchParams?.dueDate.toDateString());
-    console.log('this.todo: ', this.todo);
     this.todo = this.todo?.filter(
       (x) =>
         x?.title?.toLowerCase().includes(searchParams.title?.toLowerCase()) ||
         x?.content
           .toLowerCase()
           .includes(searchParams.content?.toLowerCase()) ||
-        x?.dueDate.toDateString() == searchParams?.dueDate.toDateString()
+        x?.dueDate?.toDateString() == searchParams?.dueDate?.toDateString()
     );
     this.progress = this.progress?.filter(
       (x) =>
@@ -158,7 +156,7 @@ export class ListsComponent implements OnInit {
         x?.content
           .toLowerCase()
           .includes(searchParams.content?.toLowerCase()) ||
-        x?.dueDate.toDateString() == searchParams?.dueDate.toDateString()
+        x?.dueDate?.toDateString() == searchParams?.dueDate?.toDateString()
     );
     this.done = this.done?.filter(
       (x) =>
@@ -166,7 +164,7 @@ export class ListsComponent implements OnInit {
         x?.content
           .toLowerCase()
           .includes(searchParams.content?.toLowerCase()) ||
-        x?.dueDate.toDateString() == searchParams?.dueDate.toDateString()
+        x?.dueDate?.toDateString() == searchParams?.dueDate?.toDateString()
     );
     this.loadChartData(
       this.todo.length + this.progress.length + this.done.length
