@@ -143,27 +143,27 @@ export class ListsComponent implements OnInit {
   searchItem(searchParams: SearchParams) {
     this.todo = this.todo?.filter(
       (x) =>
-        x.title.toLowerCase().includes(searchParams.title?.toLowerCase()) ||
+        x?.title?.toLowerCase().includes(searchParams.title?.toLowerCase()) ||
         x?.content
           .toLowerCase()
           .includes(searchParams.content?.toLowerCase()) ||
-        x?.dueDate.toString() == searchParams?.dueDate?.toISOString()
+        x?.dueDate == searchParams?.dueDate
     );
     this.progress = this.progress?.filter(
       (x) =>
-        x.title.toLowerCase().includes(searchParams.title?.toLowerCase()) ||
+        x?.title?.toLowerCase().includes(searchParams.title?.toLowerCase()) ||
         x?.content
           .toLowerCase()
           .includes(searchParams.content?.toLowerCase()) ||
-        x?.dueDate.toString() == searchParams?.dueDate?.toISOString()
+        x?.dueDate == searchParams?.dueDate
     );
     this.done = this.done?.filter(
       (x) =>
-        x.title.toLowerCase().includes(searchParams.title?.toLowerCase()) ||
+        x?.title?.toLowerCase().includes(searchParams.title?.toLowerCase()) ||
         x?.content
           .toLowerCase()
           .includes(searchParams.content?.toLowerCase()) ||
-        x?.dueDate.toString() == searchParams?.dueDate?.toISOString()
+        x?.dueDate == searchParams?.dueDate
     );
     this.loadChartData(
       this.todo.length + this.progress.length + this.done.length
