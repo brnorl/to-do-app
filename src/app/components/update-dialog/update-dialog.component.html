@@ -1,5 +1,4 @@
-<mat-card>
-  <mat-card-content>
+<card>
     <form [formGroup]="updateForm" (submit)="updateItem()">
       <div>
         <mat-form-field>
@@ -22,7 +21,7 @@
           <mat-datepicker #picker></mat-datepicker>
         </mat-form-field>
       </div>
-      <button mat-raised-button type="submit" color="success">Update Item</button>
+      <br>
+      <todoButton type="submit" color="info">Update Item</todoButton>
     </form>
-  </mat-card-content>
-</mat-card>
+</card>

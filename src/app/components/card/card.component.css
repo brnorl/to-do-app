@@ -1,0 +1,9 @@
+.card{
+    box-shadow: 1rem black;
+    padding: .5rem;
+    border-bottom: 1px solid #f1f1f1;
+}
+
+.description{
+    margin:.2rem
+}

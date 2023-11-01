@@ -18,7 +18,6 @@ import { CreateDialogComponent } from './components/create-dialog/create-dialog.
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import {MatInputModule} from '@angular/material/input';
-import {MatCardModule} from '@angular/material/card';
 import { UpdateDialogComponent } from './components/update-dialog/update-dialog.component';
 import { MatNativeDateModule } from '@angular/material/core';
 import {MatDatepickerModule} from '@angular/material/datepicker';
@@ -28,6 +27,8 @@ import { StoreModule } from '@ngrx/store';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { EffectsModule } from '@ngrx/effects';
 import * as fromApp from './store/app.reducer';
+import { CardComponent } from './components/card/card.component';
+import { TodoButtonComponent } from './components/todoButton/todoButton.component';
 
 @NgModule({
   declarations: [
@@ -37,14 +38,15 @@ import * as fromApp from './store/app.reducer';
     ListsComponent,
     DetailDialogComponent,
     CreateDialogComponent,
-    UpdateDialogComponent
+    UpdateDialogComponent,
+    CardComponent,
+    TodoButtonComponent
   ],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
     FormsModule,
     ReactiveFormsModule,
-    MatCardModule,
     MatFormFieldModule,
     MatIconModule,
     MatInputModule,

@@ -1,0 +1,64 @@
+.todo-button {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  border-radius: 20%;
+  padding: 1rem;
+  border: 0.2px solid rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  transition: transform 0.5s, box-shadow 0.3;
+  box-shadow: 0 0 0 transparent;
+}
+
+.todo-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+.primary {
+  background-color: #3f51b5;
+  border: #3f51b5;
+  color: whitesmoke;
+}
+
+.info {
+  background-color: #f3f3f3;
+  columns: rgba(0, 0, 0, 0.1);
+}
+
+.icon-primary {
+  border-radius: 50%;
+  color: rgb(63, 81, 181);
+  padding: 0;
+  margin: 0;
+  background: transparent;
+  border: none;
+  min-width: 40px;
+  min-height: 40px;
+  box-shadow: 0 0 10px rgba(63, 81, 181, 0.2);
+}
+
+.icon-secondary {
+  border-radius: 50%;
+  color: rgba(0, 0, 0, 0.7);
+  padding: 0;
+  margin: 0;
+  background: transparent;
+  border: none;
+  min-width: 40px;
+  min-height: 40px;
+  box-shadow: 0 0 10px rgba(63, 81, 181, 0.2);
+}
+.icon-warning {
+    border-radius: 50%;
+    color: rgba(244, 67, 54, 0.9);
+    padding: 0;
+    margin: 0;
+    background: transparent;
+    border: none;
+    min-width: 40px;
+    min-height: 40px;
+    box-shadow: 0 0 10px rgba(244, 67, 54, 0.2);
+}
