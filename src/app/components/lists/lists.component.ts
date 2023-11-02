@@ -36,8 +36,8 @@ export class ListsComponent implements OnInit {
   ) {}
 
   ngOnInit() {
-    this.loadItems();
     this.searchFormInit();
+    this.loadItems();
   }
 
   loadItems() {
@@ -142,13 +142,15 @@ export class ListsComponent implements OnInit {
     });
   }
   searchItem(searchParams: SearchParams) {
+    let date = new Date(searchParams?.dueDate);
+
     this.todo = this.todo?.filter(
       (x) =>
         x?.title?.toLowerCase().includes(searchParams.title?.toLowerCase()) ||
         x?.content
           .toLowerCase()
           .includes(searchParams.content?.toLowerCase()) ||
-        x?.dueDate?.toDateString() == searchParams?.dueDate?.toDateString()
+        x?.dueDate?.toDateString() == date?.toDateString()
     );
     this.progress = this.progress?.filter(
       (x) =>
@@ -156,7 +158,7 @@ export class ListsComponent implements OnInit {
         x?.content
           .toLowerCase()
           .includes(searchParams.content?.toLowerCase()) ||
-        x?.dueDate?.toDateString() == searchParams?.dueDate?.toDateString()
+        x?.dueDate?.toDateString() == date?.toDateString()
     );
     this.done = this.done?.filter(
       (x) =>
@@ -164,7 +166,7 @@ export class ListsComponent implements OnInit {
         x?.content
           .toLowerCase()
           .includes(searchParams.content?.toLowerCase()) ||
-        x?.dueDate?.toDateString() == searchParams?.dueDate?.toDateString()
+        x?.dueDate?.toDateString() == date?.toDateString()
     );
     this.loadChartData(
       this.todo.length + this.progress.length + this.done.length

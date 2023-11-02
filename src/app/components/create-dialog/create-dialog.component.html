@@ -1,37 +1,16 @@
 <card>
-    <form [formGroup]="createForm" (submit)="createItem()">
-      <div>
-        <mat-form-field>
-          <mat-label>Title</mat-label>
-          <input
-            matInput
-            maxlength="15"
-            type="text"
-            placeholder="Title"
-            formControlName="title"
-          />
-          <mat-error>Title is Required</mat-error>
-        </mat-form-field>
+  <form [formGroup]="createForm" (submit)="createItem()">
+      <div class="form-field">
+        <todoInput [form]="createForm" [controlName]="'title'" [placeHolder]="'Title'"></todoInput>
       </div>
-      <div>
-        <mat-form-field>
-          <mat-label>Content</mat-label>
-          <textarea
-            placeholder="Content"
-            formControlName="content"
-            matInput
-          ></textarea>
-        </mat-form-field>
+      <div class="form-field">
+        <todoInput [form]="createForm" [controlName]="'content'" [placeHolder]="'Content'"></todoInput>
       </div>
-      <div>
-        <mat-form-field>
-          <mat-label>Due Date</mat-label>
-          <input formControlName="dueDate" matInput [matDatepicker]="picker">
-          <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
-          <mat-datepicker #picker></mat-datepicker>
-        </mat-form-field>
+      <div class="form-field">
+        <todoCalendar [form]="createForm" [controlName]="'dueDate'" [placeHolder]="'dueDate'">
+        </todoCalendar>
       </div>
       <br>
       <todoButton mat-raised-button type="submit" color="info">Add Item</todoButton>
-    </form>
+  </form>
 </card>

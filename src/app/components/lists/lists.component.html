@@ -1,33 +1,29 @@
 <card>
-    <form [formGroup]="searchForm">
-      <div class="search">
-        <div class="left">
-          <todoButton class="position-left form-field button" (click)="openCreateDialog()" color="primary">
-            <mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="add"></mat-icon>
-            Add
-          </todoButton>
-        </div>
-        <div class="right">
-          <div class="contents">
-            <mat-form-field class="form-field">
-              <mat-label>Title</mat-label>
-              <input matInput maxlength="15" type="text" placeholder="Title" formControlName="title" />
-            </mat-form-field>
-            <mat-form-field class="form-field">
-              <mat-label>Content</mat-label>
-              <input placeholder="Content" formControlName="content" matInput />
-            </mat-form-field>
-            <mat-form-field class="form-field">
-              <mat-label>Due Date</mat-label>
-              <input formControlName="dueDate" matInput [matDatepicker]="picker">
-              <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
-              <mat-datepicker #picker></mat-datepicker>
-            </mat-form-field>
-              <todoButton class="clearButton" (click)="clearForm()" color="info">Clear</todoButton>
+  <form [formGroup]="searchForm">
+    <div class="search">
+      <div class="left">
+        <todoButton class="position-left form-field button" (click)="openCreateDialog()" color="primary">
+          <mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="add"></mat-icon>
+          Add
+        </todoButton>
+      </div>
+      <div class="right">
+        <div class="contents">
+          <div class="form-field">
+            <todoInput [form]="searchForm" [controlName]="'title'" [placeHolder]="'Title'"></todoInput>
           </div>
+          <div class="form-field">
+            <todoInput [form]="searchForm" [controlName]="'content'" [placeHolder]="'Content'"></todoInput>
+          </div>
+          <div class="form-field">
+            <todoCalendar [form]="searchForm" [controlName]="'dueDate'" [placeHolder]="'dueDate'">
+            </todoCalendar>
+          </div>
+          <todoButton class="clearButton" (click)="clearForm()" color="info">Clear</todoButton>
         </div>
       </div>
-    </form>
+    </div>
+  </form>
 </card>
 <div class="grid-container">
   <div class="item-container">
@@ -36,25 +32,25 @@
     <div cdkDropList #todoList="cdkDropList" [cdkDropListData]="todo"
       [cdkDropListConnectedTo]="[progressList, todoList]" class="item-list" (cdkDropListDropped)="drop($event, 1)">
       <card>
-          <div class="item-box" *ngFor="let item of todo" cdkDrag>
-            <div class="title">
-              {{ item.title }}
-            </div>
-            <div class="warning" *ngIf=' 7 > calculateRemainingDay(item) && 0 < calculateRemainingDay(item) '>
-              {{calculateRemainingDay(item)}} day(s)
-            </div>
-            <div class="item-buttons">
-              <todoButton class="item-button" (click)="openDetailsDialog(item)" color="icon-primary">
-                <mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="remove_red_eye"></mat-icon>
-              </todoButton>
-              <todoButton class="item-button" (click)="openUpdateDialog(item)" color="icon-secondary">
-                <mat-icon aria-hidden="false" fontIcon="edit"></mat-icon>
-              </todoButton>
-              <todoButton class="item-button" (click)="deleteItem(item)" color="icon-warning">
-                <mat-icon aria-hidden="false" fontIcon="delete"></mat-icon>
-              </todoButton>
-            </div>
+        <div class="item-box" *ngFor="let item of todo" cdkDrag>
+          <div class="title">
+            {{ item.title }}
           </div>
+          <div class="warning" *ngIf=' 7 > calculateRemainingDay(item) && 0 < calculateRemainingDay(item) '>
+            {{calculateRemainingDay(item)}} day(s)
+          </div>
+          <div class="item-buttons">
+            <todoButton class="item-button" (click)="openDetailsDialog(item)" color="icon-primary">
+              <mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="remove_red_eye"></mat-icon>
+            </todoButton>
+            <todoButton class="item-button" (click)="openUpdateDialog(item)" color="icon-secondary">
+              <mat-icon aria-hidden="false" fontIcon="edit"></mat-icon>
+            </todoButton>
+            <todoButton class="item-button" (click)="deleteItem(item)" color="icon-warning">
+              <mat-icon aria-hidden="false" fontIcon="delete"></mat-icon>
+            </todoButton>
+          </div>
+        </div>
       </card>
     </div>
   </div>
@@ -66,25 +62,25 @@
       [cdkDropListConnectedTo]="[doneList, progressList, todoList]" class="item-list"
       (cdkDropListDropped)="drop($event, 2)">
       <card>
-          <div class="item-box" *ngFor="let item of progress" cdkDrag>
-            <div class="title">
-              {{ item.title }}
-            </div>
-            <div class="warning" *ngIf=' 7 > calculateRemainingDay(item) && 0 < calculateRemainingDay(item) '>
-              {{calculateRemainingDay(item)}} day(s)
-            </div>
-            <div class="item-buttons">
-              <todoButton class="item-button" (click)="openDetailsDialog(item)" color="icon-primary">
-                <mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="remove_red_eye"></mat-icon>
-              </todoButton>
-              <todoButton class="item-button" (click)="openUpdateDialog(item)" color="icon-secondary">
-                <mat-icon aria-hidden="false" fontIcon="edit"></mat-icon>
-              </todoButton>
-              <todoButton class="item-button" (click)="deleteItem(item)" color="icon-warning">
-                <mat-icon aria-hidden="false" fontIcon="delete"></mat-icon>
-              </todoButton>
-            </div>
+        <div class="item-box" *ngFor="let item of progress" cdkDrag>
+          <div class="title">
+            {{ item.title }}
           </div>
+          <div class="warning" *ngIf=' 7 > calculateRemainingDay(item) && 0 < calculateRemainingDay(item) '>
+            {{calculateRemainingDay(item)}} day(s)
+          </div>
+          <div class="item-buttons">
+            <todoButton class="item-button" (click)="openDetailsDialog(item)" color="icon-primary">
+              <mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="remove_red_eye"></mat-icon>
+            </todoButton>
+            <todoButton class="item-button" (click)="openUpdateDialog(item)" color="icon-secondary">
+              <mat-icon aria-hidden="false" fontIcon="edit"></mat-icon>
+            </todoButton>
+            <todoButton class="item-button" (click)="deleteItem(item)" color="icon-warning">
+              <mat-icon aria-hidden="false" fontIcon="delete"></mat-icon>
+            </todoButton>
+          </div>
+        </div>
       </card>
     </div>
   </div>
@@ -95,28 +91,27 @@
     <div cdkDropList #doneList="cdkDropList" [cdkDropListData]="done"
       [cdkDropListConnectedTo]="[todoList, progressList]" class="item-list" (cdkDropListDropped)="drop($event, 3)">
       <card>
-          <div class="item-box" *ngFor="let item of done" cdkDrag>
-            {{ item.title }}
-            <div class="item-buttons">
-              <todoButton class="item-button" (click)="openDetailsDialog(item)" color="icon-primary">
-                <mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="remove_red_eye"></mat-icon>
-              </todoButton>
-              <todoButton class="item-button" (click)="openUpdateDialog(item)" color="icon-secondary">
-                <mat-icon aria-hidden="false" fontIcon="edit"></mat-icon>
-              </todoButton>
-              <todoButton class="item-button" (click)="deleteItem(item)" color="icon-warning">
-                <mat-icon aria-hidden="false" fontIcon="delete"></mat-icon>
-              </todoButton>
-            </div>
+        <div class="item-box" *ngFor="let item of done" cdkDrag>
+          {{ item.title }}
+          <div class="item-buttons">
+            <todoButton class="item-button" (click)="openDetailsDialog(item)" color="icon-primary">
+              <mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="remove_red_eye"></mat-icon>
+            </todoButton>
+            <todoButton class="item-button" (click)="openUpdateDialog(item)" color="icon-secondary">
+              <mat-icon aria-hidden="false" fontIcon="edit"></mat-icon>
+            </todoButton>
+            <todoButton class="item-button" (click)="deleteItem(item)" color="icon-warning">
+              <mat-icon aria-hidden="false" fontIcon="delete"></mat-icon>
+            </todoButton>
           </div>
+        </div>
       </card>
     </div>
   </div>
 </div>
 <div class="grid-container">
   <div class="item-container" style="min-height: 20rem;">
-    <ngx-charts-pie-chart [results]="data" [animations]="animationPC" [scheme]="colorSchemePC"
-      [labels]="labelsPC" [doughnut]="doughnut" [tooltipText]="percentageFormatter"
-      [gradient]="true"></ngx-charts-pie-chart>
+    <ngx-charts-pie-chart [results]="data" [animations]="animationPC" [scheme]="colorSchemePC" [labels]="labelsPC"
+      [doughnut]="doughnut" [tooltipText]="percentageFormatter" [gradient]="true"></ngx-charts-pie-chart>
   </div>
 </div>

@@ -29,6 +29,8 @@ import { EffectsModule } from '@ngrx/effects';
 import * as fromApp from './store/app.reducer';
 import { CardComponent } from './components/card/card.component';
 import { TodoButtonComponent } from './components/todoButton/todoButton.component';
+import { TodoInputComponent } from './components/todoInput/todoInput.component';
+import { TodoCalendarComponent } from './components/todoCalendar/todoCalendar.component';
 
 @NgModule({
   declarations: [
@@ -40,7 +42,9 @@ import { TodoButtonComponent } from './components/todoButton/todoButton.componen
     CreateDialogComponent,
     UpdateDialogComponent,
     CardComponent,
-    TodoButtonComponent
+    TodoButtonComponent,
+    TodoInputComponent,
+    TodoCalendarComponent
   ],
   imports: [
     BrowserModule,

@@ -101,7 +101,8 @@
 }
 
 .form-field {
-  margin-right: 1rem;
+  display: inline-flex;
+  margin-right: 2rem;
 }
 
 .card-content {
