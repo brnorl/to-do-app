@@ -33,7 +33,9 @@ export class UpdateDialogComponent implements OnInit {
   }
 
   updateItem() {
-    this.updateForm.value['dueDate'] = new Date(this.updateForm.value['dueDate']);
+    this.updateForm.value['dueDate'] = new Date(
+      this.updateForm.value['dueDate']
+    );
     this.store.dispatch(updateItem({ item: this.updateForm.value }));
     this.modalService.close();
   }

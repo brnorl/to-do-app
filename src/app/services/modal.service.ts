@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { MatDialog, MatDialogRef } from '@angular/material/dialog';
-import { DetailDialogComponent} from '../components/detail-dialog/detail-dialog.component';
+import { DetailDialogComponent } from '../components/detail-dialog/detail-dialog.component';
 import { TodoItem } from '../interfaces/todoItem';
 import { CreateDialogComponent } from '../components/create-dialog/create-dialog.component';
 import { UpdateDialogComponent } from '../components/update-dialog/update-dialog.component';
@@ -24,8 +24,8 @@ export class ModalService {
         title: item.title,
         content: item.content,
         id: item.id,
-        status : item.status,
-        dueDate : item.dueDate
+        status: item.status,
+        dueDate: item.dueDate,
       }),
     });
 
@@ -43,7 +43,7 @@ export class ModalService {
     return this.dialogRef;
   }
 
-  openUpdateDialog(item : TodoItem) {
+  openUpdateDialog(item: TodoItem) {
     if (this.dialogRef) {
       this.dialogRef.close();
     }
@@ -53,8 +53,8 @@ export class ModalService {
         title: item.title,
         content: item.content,
         id: item.id,
-        status : item.status,
-        dueDate : item.dueDate
+        status: item.status,
+        dueDate: item.dueDate,
       }),
     });
 

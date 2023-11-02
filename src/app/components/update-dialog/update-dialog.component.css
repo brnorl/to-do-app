@@ -1,19 +1,19 @@
-card{
-    display: block;
-    width: 20rem;
-    height: 20rem;
+card {
+  display: block;
+  width: 20rem;
+  height: 20rem;
 }
 
-todoInput{
-    display: block;
-    width: 90%;
+todoInput {
+  display: block;
+  width: 90%;
 }
 
-todoCalendar{
-    display: block;
-    width: 90%;
+todoCalendar {
+  display: block;
+  width: 90%;
 }
 
-.form-field{
-    margin-top: 1rem;
+.form-field {
+  margin-top: 1rem;
 }

@@ -1,12 +1,12 @@
 footer {
-    background-color: #6977C5;
-    height: 150px;
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-  p{
-    color: #fff;
-    text-align: center;
-  }
+  background-color: #6977c5;
+  height: 150px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+p {
+  color: #fff;
+  text-align: center;
+}

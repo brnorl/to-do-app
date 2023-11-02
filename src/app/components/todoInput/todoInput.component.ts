@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { FormGroup } from '@angular/forms';
 
 @Component({
@@ -6,12 +6,10 @@ import { FormGroup } from '@angular/forms';
   templateUrl: './todoInput.component.html',
   styleUrls: ['./todoInput.component.css'],
 })
-export class TodoInputComponent implements OnInit {
+export class TodoInputComponent {
   @Input() form: FormGroup;
   @Input() controlName: string;
   @Input() placeHolder: string;
 
   constructor() {}
-
-  ngOnInit() {}
 }

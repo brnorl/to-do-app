@@ -1,7 +1,6 @@
 import { NgModule, isDevMode } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { MatIconModule } from '@angular/material/icon';
-import { MatToolbarModule } from '@angular/material/toolbar';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NavComponent } from './components/nav/nav.component';
@@ -12,12 +11,10 @@ import { MatDialogModule } from '@angular/material/dialog';
 import { ModalService } from './services/modal.service';
 import { ToDoService } from './services/to-do.service';
 import { HttpClientModule } from '@angular/common/http';
-import { MatDividerModule } from '@angular/material/divider';
 import { CreateDialogComponent } from './components/create-dialog/create-dialog.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { MatFormFieldModule } from '@angular/material/form-field';
 import { UpdateDialogComponent } from './components/update-dialog/update-dialog.component';
-import { NgxChartsModule } from "@swimlane/ngx-charts";
+import { NgxChartsModule } from '@swimlane/ngx-charts';
 import { FooterComponent } from './components/footer/footer.component';
 import { StoreModule } from '@ngrx/store';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
@@ -40,7 +37,7 @@ import { TodoCalendarComponent } from './components/todoCalendar/todoCalendar.co
     CardComponent,
     TodoButtonComponent,
     TodoInputComponent,
-    TodoCalendarComponent
+    TodoCalendarComponent,
   ],
   imports: [
     BrowserModule,

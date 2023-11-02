@@ -13,4 +13,4 @@ export const selectItems = createSelector(
 export const selectSelectedItem = createSelector(
   selectAppState,
   (state: fromApp.State) => state.selectedItem
-)
+);

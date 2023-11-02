@@ -1,16 +1,16 @@
 <card>
-    <form [formGroup]="updateForm" (submit)="updateItem()">
-      <div class="form-field">
-        <todoInput [form]="updateForm" [controlName]="'title'" [placeHolder]="'Title'"></todoInput>
-      </div>
-      <div class="form-field">
-        <todoInput [form]="updateForm" [controlName]="'content'" [placeHolder]="'Content'"></todoInput>
-      </div>
-      <div class="form-field">
-        <todoCalendar [form]="updateForm" [controlName]="'dueDate'" [placeHolder]="'dueDate'">
-        </todoCalendar>
-      </div>
-      <br>
-      <todoButton type="submit" color="info">Update Item</todoButton>
-    </form>
+  <form [formGroup]="updateForm" (submit)="updateItem()">
+    <div class="form-field">
+      <todoInput [form]="updateForm" [controlName]="'title'" [placeHolder]="'Title'"></todoInput>
+    </div>
+    <div class="form-field">
+      <todoInput [form]="updateForm" [controlName]="'content'" [placeHolder]="'Content'"></todoInput>
+    </div>
+    <div class="form-field">
+      <todoCalendar [form]="updateForm" [controlName]="'dueDate'" [placeHolder]="'dueDate'">
+      </todoCalendar>
+    </div>
+    <br>
+    <todoButton type="submit" color="info">Update Item</todoButton>
+  </form>
 </card>

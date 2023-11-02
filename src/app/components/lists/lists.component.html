@@ -25,10 +25,10 @@
     </div>
   </form>
 </card>
+
 <div class="grid-container">
   <div class="item-container">
     <h2>To do</h2>
-
     <div cdkDropList #todoList="cdkDropList" [cdkDropListData]="todo"
       [cdkDropListConnectedTo]="[progressList, todoList]" class="item-list" (cdkDropListDropped)="drop($event, 1)">
       <card>
@@ -57,7 +57,6 @@
 
   <div class="item-container">
     <h2>In Progress</h2>
-
     <div cdkDropList #progressList="cdkDropList" [cdkDropListData]="progress"
       [cdkDropListConnectedTo]="[doneList, progressList, todoList]" class="item-list"
       (cdkDropListDropped)="drop($event, 2)">
@@ -87,7 +86,6 @@
 
   <div class="item-container">
     <h2>Done</h2>
-
     <div cdkDropList #doneList="cdkDropList" [cdkDropListData]="done"
       [cdkDropListConnectedTo]="[todoList, progressList]" class="item-list" (cdkDropListDropped)="drop($event, 3)">
       <card>
@@ -109,6 +107,7 @@
     </div>
   </div>
 </div>
+
 <div class="grid-container">
   <div class="item-container" style="min-height: 20rem;">
     <ngx-charts-pie-chart [results]="data" [animations]="animationPC" [scheme]="colorSchemePC" [labels]="labelsPC"

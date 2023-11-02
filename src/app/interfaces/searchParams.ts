@@ -1,5 +1,5 @@
 export interface SearchParams {
   title: string;
   content: string;
-  dueDate : Date;
+  dueDate: Date;
 }

@@ -183,6 +183,6 @@ export class ListsComponent implements OnInit {
       let remainingDays = item.dueDate.getDate() - new Date().getDate();
       return remainingDays;
     }
-    return 0
+    return 0;
   }
 }

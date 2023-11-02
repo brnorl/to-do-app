@@ -1,16 +1,16 @@
 <card>
   <form [formGroup]="createForm" (submit)="createItem()">
-      <div class="form-field">
-        <todoInput [form]="createForm" [controlName]="'title'" [placeHolder]="'Title'"></todoInput>
-      </div>
-      <div class="form-field">
-        <todoInput [form]="createForm" [controlName]="'content'" [placeHolder]="'Content'"></todoInput>
-      </div>
-      <div class="form-field">
-        <todoCalendar [form]="createForm" [controlName]="'dueDate'" [placeHolder]="'dueDate'">
-        </todoCalendar>
-      </div>
-      <br>
-      <todoButton mat-raised-button type="submit" color="info">Add Item</todoButton>
+    <div class="form-field">
+      <todoInput [form]="createForm" [controlName]="'title'" [placeHolder]="'Title'"></todoInput>
+    </div>
+    <div class="form-field">
+      <todoInput [form]="createForm" [controlName]="'content'" [placeHolder]="'Content'"></todoInput>
+    </div>
+    <div class="form-field">
+      <todoCalendar [form]="createForm" [controlName]="'dueDate'" [placeHolder]="'dueDate'">
+      </todoCalendar>
+    </div>
+    <br>
+    <todoButton mat-raised-button type="submit" color="info">Add Item</todoButton>
   </form>
 </card>
