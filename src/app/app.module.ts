@@ -1,7 +1,6 @@
 import { NgModule, isDevMode } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { MatIconModule } from '@angular/material/icon';
-import { MatButtonModule } from '@angular/material/button';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -17,10 +16,7 @@ import { MatDividerModule } from '@angular/material/divider';
 import { CreateDialogComponent } from './components/create-dialog/create-dialog.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatFormFieldModule } from '@angular/material/form-field';
-import {MatInputModule} from '@angular/material/input';
 import { UpdateDialogComponent } from './components/update-dialog/update-dialog.component';
-import { MatNativeDateModule } from '@angular/material/core';
-import {MatDatepickerModule} from '@angular/material/datepicker';
 import { NgxChartsModule } from "@swimlane/ngx-charts";
 import { FooterComponent } from './components/footer/footer.component';
 import { StoreModule } from '@ngrx/store';
@@ -51,20 +47,11 @@ import { TodoCalendarComponent } from './components/todoCalendar/todoCalendar.co
     BrowserAnimationsModule,
     FormsModule,
     ReactiveFormsModule,
-    MatFormFieldModule,
-    MatIconModule,
-    MatInputModule,
     HttpClientModule,
-    MatToolbarModule,
-    MatButtonModule,
     MatIconModule,
     CdkDrag,
     CdkDropList,
     MatDialogModule,
-    MatButtonModule,
-    MatDividerModule,
-    MatDatepickerModule,
-    MatNativeDateModule,
     NgxChartsModule,
     StoreModule.forRoot({}, {}),
     StoreDevtoolsModule.instrument({ maxAge: 25, logOnly: !isDevMode() }),

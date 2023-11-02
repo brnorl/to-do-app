@@ -1,4 +1,11 @@
-a{
-    text-decoration: none;
+nav{
+    background-color: #6977C5;
+    height: 70px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     color: aliceblue;
+    font-size: large;
+    font-weight: 500;
 }

@@ -33,8 +33,8 @@ export class UpdateDialogComponent implements OnInit {
   }
 
   updateItem() {
-    const value = this.updateForm.getRawValue();
-    this.store.dispatch(updateItem({ item: value }));
+    this.updateForm.value['dueDate'] = new Date(this.updateForm.value['dueDate']);
+    this.store.dispatch(updateItem({ item: this.updateForm.value }));
     this.modalService.close();
   }
 

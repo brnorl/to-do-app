@@ -1,3 +1,4 @@
 <div [formGroup]="form">
-  <input type="date" [placeholder]="placeHolder" [formControlName]="controlName" />
+  <input type="text" onfocus="(this.type='date')" onblur="(this.type='text')" [placeholder]="placeHolder"
+    [formControlName]="controlName" />
 </div>

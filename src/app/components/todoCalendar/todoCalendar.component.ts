@@ -9,7 +9,7 @@ import { FormGroup } from '@angular/forms';
 export class TodoCalendarComponent implements OnInit {
   @Input() form: FormGroup;
   @Input() controlName: string;
-  @Input() placeHolder: string;
+  @Input() placeHolder: string = "Due Date";
   constructor() { }
 
   ngOnInit() {

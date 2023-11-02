@@ -24,6 +24,7 @@ export class CreateDialogComponent implements OnInit {
   }
 
   createItem() {
+    this.createForm.value['dueDate'] = new Date(this.createForm.value['dueDate']);
     this.store.dispatch(addItem({ item: this.createForm.value }));
     this.modalService.close();
   }
@@ -33,7 +34,7 @@ export class CreateDialogComponent implements OnInit {
       title: [null, [Validators.required]],
       content: [null],
       status: [1],
-      dueDate: [null],
+      dueDate: [new Date()],
     });
   }
 }
